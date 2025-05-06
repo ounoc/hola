@@ -1,0 +1,330 @@
+/*----------------HTML---------------*/
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: white;
+}
+/*----------------TOP---------------*/
+#gridTop {
+    display: flex;
+    width: 100%;
+    height: 6%;
+}
+
+#gridTopLeft{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    gap: 20px;
+    justify-content: left;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+#gridTopRight{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    gap: 10px;
+    justify-content: right;
+    padding-top:9px;
+    padding-right: 20px;
+}
+/*----------------Center---------------*/
+#gridCenter {
+    flex: 1;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(36, 36, 36), black);
+    display:flex;
+    justify-content: start;
+    align-items: center;
+}
+#divCenterLeft{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#seleccionador{
+    border: 1px solid white;
+    width: 50%;
+    height: 50%;
+    justify-content: left;
+    display: table-row;
+}
+#divCenterCenter{
+    width: 100%;
+    height: 90%;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    max-height: 90%;
+}
+#divCenterRight{
+    width: 25%;
+    height: 100%;
+}
+/*----------------Bottom---------------*/
+#gridBot {
+    height: 6%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 2rem; 
+}
+
+/*----------------another things---------------*/
+#botonMas{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 1000;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transition: transform 0.3s ease;
+}
+#botonMas:hover{
+    transform: scale(1.1);
+}
+
+#masDiv{
+    position:absolute;
+    background: linear-gradient(to right, rgba(19, 19, 19, 0.9), transparent);
+    height: 100%;
+    width: 100%;
+    animation: slideIn 0.5s ease forwards;
+}
+#masDiv.out{
+    animation: slideOut 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+      opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#botonCerrarGridMas {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 25px;
+    transition: transform 0.5s ease;
+    margin-top: 60px;
+    margin-left: 50px;
+}
+#botonCerrarGridMas:hover{
+    transform: scale(1.3);
+}
+
+.botonGridMas{
+    background: none;
+    color: white;
+    border: none;
+    margin-left: 50px;
+    margin-top: 130px;
+    font-size: 50px;
+    transition: transform 0.5s ease;
+}
+.botonGridMas:hover{
+    transform: translateX(20px);
+    opacity: 0.5;
+}
+
+a i {
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  a:hover i {
+    color: #1DA1F2;
+  }
+
+.casas{
+    width: 250px;
+    height: 150px;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#tittleCenter{
+    margin-top: 20px;
+    font-size: 200%;
+}
+.nexo{
+    margin-top: 10px;
+    margin-left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+.nexo:hover{
+    transform: translateX(10px);
+    opacity: 0.5;
+}
+.gridCenterLeftOptions{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 30px;
+    transition: transform 0.3s ease;
+}
+.gridCenterLeftOptions:hover{
+    transform: translateX(20px);
+    opacity: 0.5;
+}
+
+#passwordAdminInput {
+    width: 200px;
+    height: 30px;
+    margin-top: 20%;
+}
+.adminButton{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 1000;
+    width: 120px;
+    height: 30px;
+    padding: 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    transition: transform 0.3s ease;
+    margin-top: 5px;
+}
+.adminButton:hover{
+    transform: scale(1.2);
+}
+
+#divCenterCenterPropiedad{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#divPreview{
+    display: flex;
+    width: 90%;
+    height: 90%;
+    max-width: 90%;
+    max-height: 93%;
+    border: 1px solid white;
+    align-items: center;
+  }
+  
+#previewImg{
+    display: none;
+    max-width: 90%;
+    max-height: 500px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 1px solid white;
+}
+#labelPhotoInput{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 1000;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    border-left: none;
+    border-right: none;
+}
+#labelPhotoInput:hover{
+    color: black;
+}
+#photoDiv{
+    width: 35%;
+    max-width: 385px;
+    height: 100%;
+    max-height: 630px;
+    margin-top: 2%;
+    margin-left: 2%;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+#photoDiv::-webkit-scrollbar {
+  width: 8px;
+  color: rgba(0, 0, 0, 0);
+}
+
+#photoDiv::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+#photoDiv::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+#photoDiv::-webkit-scrollbar-thumb:hover {
+color: #555;
+}
+#textDiv{
+    display: flex;
+    width: 65%;
+    max-width: 750px;
+    height: 100%;
+    max-height: 678px;
+    margin-top: 2%;
+    margin-left: 2%;
+    flex-direction: column;
+}
+#titleInput {
+    display: block;
+    margin: 20px auto;
+    font-size: 20px;
+    width: 300px;
+    background: none;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
