@@ -65,11 +65,18 @@ function menuCrear(){
     </div>
     <div id="textDiv">
       <label>Titulo</label>
-      <input id="titleInput">
+      <input id="titleInput"class="titleInput">
+      <label>Precio</label>
+      <input id="priceInput"class="titleInput">
+      <label>Información Básica</label>
+      <textarea id="basicInfoTextarea" placeholder="Ambientes, baños, pisos, situacion, dormitorios, condicion, antiguedad, expensas, etc."></textarea>
+      <label>Descripcion</label>
+      <textarea id="descriptionTextarea" placeholder="Descripcion detallada de la propiedad"></textarea>
+      <button class="adminButton" id="finalizarBtn">Finalizar</button>
     </div>
   </div>
   `
-
+  let finalizarBtn = document.getElementById("finalizarBtn")
   let input = document.getElementById("photoInput")
   let preview = document.getElementById("previewImg")
   let thumbnails = document.getElementById("thumbnails")
@@ -82,7 +89,6 @@ function menuCrear(){
       renderThumbnails()
     }
   })
-
   function renderThumbnails() {
     thumbnails.innerHTML = ""
 
@@ -125,24 +131,36 @@ function menuCrear(){
 
           renderThumbnails()
         })
+        thumb.addEventListener("click", () => {
+          images.splice(index, 1)
+          renderThumbnails()
+        })
 
         thumbnails.appendChild(thumb)
       }
       reader.readAsDataURL(image)
     })
   }
+  finalizarBtn.onclick = () => {
+  let title = document.getElementById("titleInput").value
+  let price = document.getElementById("priceInput").value
+  let basicInfo = document.getElementById("basicInfoTextarea").value
+  let descripcion = document.getElementById("descriptionTextarea").value
+
+  let newInfo = [title,price,basicInfo,descripcion,images]
+  }
 }
 
 function crearPropiedad() {
   menuCrear()
   }
-
+  
 /* ---------------- Más ----------------- */
 
 gridTopLeft.innerHTML = `<img src="logo.png" style="margin-left:64px;">`
 
 botonIngresarAdmin.onclick = () => {
-    window.location.href = "index.HTMl"
+  window.location.href = "index.HTMl"
 }
 
 document.addEventListener("DOMContentLoaded",function(){
